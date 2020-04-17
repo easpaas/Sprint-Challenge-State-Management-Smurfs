@@ -33,7 +33,6 @@ const NewSmurf = ({add}) => {
       
         // call addSmurf from App and pass new smurf
         add(formData);
-
       })
       .catch(err => console.log(err.response));
   };

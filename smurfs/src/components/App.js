@@ -7,10 +7,8 @@ import NewSmurf from "./NewSmurf";
 
 
 function App() { 
-  // TODO state
   const [data, setData] = useState([]);
 
-  // TODO useEffect 
   useEffect(() => {
     axios.get('http://localhost:3333/smurfs')
     .then(response => {
@@ -22,8 +20,8 @@ function App() {
     })
   }, []);
 
+  // add new smurf to existing smurf array
   const addSmurf = (smurf) => {
-    // TODO add smurf from form to existing smurf array
     return [
       ...data,
       smurf
