@@ -13,18 +13,29 @@ function App() {
     axios
       .get("http://localhost:3333/smurfs")
       .then(response => {
-        // TODO dispatch action that adds new smurf to inital data
         setData(response.data);
       })
       .catch(error => {
         console.log(error.message);
       });
-  }, []);
+  }, [data]);
 
   // add new smurf to existing smurf array
   const addSmurf = smurf => {
     setData([...data, smurf]);
   };
+
+  const deleteSmurf = (id) => {
+    axios.delete(`http://localhost:3333/smurfs/${id}`)
+    .then(response => {
+    setData([...data]);
+      console.log(response.data)
+    })
+    .catch(error => {
+      console.log(error.message)
+    })
+    // console.log('inside delete smurf function')
+  }
 
   return (
     <div className="App">
@@ -40,7 +51,7 @@ function App() {
         </div>
       </SmurfContext.Provider>
 
-      <SmurfContext.Provider value={{ data }}>
+      <SmurfContext.Provider value={{ data, deleteSmurf }}>
         <SmurfList />
       </SmurfContext.Provider>
     </div>
