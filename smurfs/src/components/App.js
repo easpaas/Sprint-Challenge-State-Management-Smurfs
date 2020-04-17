@@ -7,29 +7,29 @@ import NewSmurf from "./NewSmurf";
 import { SmurfContext } from "../contexts";
 
 function App() {
-  const [data, setData] = useState([]);
+  const [smurfData, setSmurfData] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:3333/smurfs")
       .then(response => {
-        setData(response.data);
+        setSmurfData(response.data);
       })
       .catch(error => {
         console.log(error.message);
       });
-  }, [data]);
+  }, [smurfData]);
 
   // add new smurf to existing smurf array
   const addSmurf = smurf => {
-    setData([...data, smurf]);
+    setSmurfData([...smurfData, smurf]);
   };
 
   // remove smurf from array if remove button clicked
   const deleteSmurf = (id) => {
     axios.delete(`http://localhost:3333/smurfs/${id}`)
     .then(() => {
-      setData([...data]);
+      setSmurfData([...smurfData]);
     })
     .catch(error => {
       console.log(error.message)
@@ -39,7 +39,6 @@ function App() {
   return (
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
-    
       <SmurfContext.Provider value={{ addSmurf }}>
         <div className="form">
           <h3>add a new smurf</h3>
@@ -47,7 +46,7 @@ function App() {
         </div>
       </SmurfContext.Provider>
 
-      <SmurfContext.Provider value={{ data, deleteSmurf }}>
+      <SmurfContext.Provider value={{ smurfData, deleteSmurf }}>
         <SmurfList />
       </SmurfContext.Provider>
     </div>
