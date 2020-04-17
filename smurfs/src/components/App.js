@@ -22,6 +22,15 @@ function App() {
     })
   }, []);
 
+  const addSmurf = (smurf) => {
+    // TODO add smurf from form to existing smurf array
+    return [
+      ...data,
+      smurf
+    ]
+  }
+
+
   return (
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
@@ -30,7 +39,7 @@ function App() {
       <div>Have fun!</div>
       <div className="form">
         <h3>Add a new smurf</h3>
-        <NewSmurf />
+        <NewSmurf add={addSmurf} />
       </div>
       <div className="smurf">
         { 

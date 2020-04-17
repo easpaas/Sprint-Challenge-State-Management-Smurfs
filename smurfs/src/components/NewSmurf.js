@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 import "./App.css";
 
-const NewSmurf = () => {
+const NewSmurf = ({add}) => {
   const [formData, setFormData] = useState({
     id: Date.now(),
     name: "",
@@ -21,18 +21,21 @@ const NewSmurf = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // axios
-    //   .post("https://localhost:3333/smurfs", formData)
-    //   .then(res => {
-    //     // reset form if successful
-    //     setFormData({
-    //       name: "",
-    //       age: "",
-    //       height: ""
-    //     });
-    //   })
-    //   .catch(err => console.log(err.response));
-    console.log(formData)
+    axios
+      .post("http://localhost:3333/smurfs", formData)
+      .then(res => {
+        // reset form if successful
+        setFormData({
+          name: "",
+          age: "",
+          height: ""
+        });
+      
+        // call addSmurf from App and pass new smurf
+        add(formData);
+
+      })
+      .catch(err => console.log(err.response));
   };
 
   return (

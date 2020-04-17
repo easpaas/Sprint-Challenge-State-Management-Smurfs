@@ -2,8 +2,6 @@ import React from 'react';
 
 const Smurf = ({smurf}) => {
   return(
-    <>
-    <h1>Coming soon to Smurfvilla</h1>
     <div className="smurf-container">
       <h2>{smurf.name}</h2>
       <div className="attributes">
@@ -11,7 +9,6 @@ const Smurf = ({smurf}) => {
         <p>{`${smurf.name} is ${smurf.height} cm tall.`}</p>
       </div>
     </div>
-    </>
   );
 }
 
