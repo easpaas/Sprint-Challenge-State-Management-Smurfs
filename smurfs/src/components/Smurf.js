@@ -3,8 +3,9 @@ import Axios from 'axios';
 
 const Smurf = ({smurf}) => {
 
-  const handleDelete = (e, id) => {
-    // TODO make axios call to delete smurf
+  //TODO state update will cause re-render. Currently state lives in App. Push this function to App an call it via props
+  
+  const handleDelete = (id) => {
     Axios.delete(`http://localhost:3333/smurfs/${id}`)
     .then(response => {
       console.log(response.data)
@@ -21,7 +22,7 @@ const Smurf = ({smurf}) => {
         <p>{`${smurf.name} is ${smurf.age} smurf years old.`}</p>
         <p>{`${smurf.name} is ${smurf.height} cm tall.`}</p>
       </div>
-      <button onClick={(e) => handleDelete(e, smurf.id)}>Remove the bad smurf</button>
+      <button onClick={() => handleDelete(smurf.id)}>Remove the bad smurf</button>
     </div>
   );
 }

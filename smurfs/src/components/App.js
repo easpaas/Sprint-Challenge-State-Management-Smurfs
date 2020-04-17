@@ -22,10 +22,10 @@ function App() {
 
   // add new smurf to existing smurf array
   const addSmurf = (smurf) => {
-    return [
+    setData([
       ...data,
       smurf
-    ]
+    ])
   }
 
 
