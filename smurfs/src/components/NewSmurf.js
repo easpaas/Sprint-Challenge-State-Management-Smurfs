@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from 'axios';
 import "./App.css";
 
-const NewSmurf = ({add}) => {
+import {SmurfContext} from '../contexts';
+
+const NewSmurf = () => {
+  const { addSmurf } = useContext(SmurfContext);
+
   const [formData, setFormData] = useState({
     id: Date.now(),
     name: "",
@@ -32,7 +36,7 @@ const NewSmurf = ({add}) => {
         });
       
         // call addSmurf from App and pass new smurf
-        add(formData);
+        addSmurf(formData);
       })
       .catch(err => console.log(err.response));
   };

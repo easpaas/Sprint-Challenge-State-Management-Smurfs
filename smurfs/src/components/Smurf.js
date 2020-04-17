@@ -2,8 +2,6 @@ import React from 'react';
 import Axios from 'axios';
 
 const Smurf = ({smurf}) => {
-
-  //TODO state update will cause re-render. Currently state lives in App. Push this function to App an call it via props
   
   const handleDelete = (id) => {
     Axios.delete(`http://localhost:3333/smurfs/${id}`)
@@ -15,7 +13,7 @@ const Smurf = ({smurf}) => {
     })
   }
 
-  return(
+  return (
     <div className="smurf-container">
       <h2>{smurf.name}</h2>
       <div className="attributes">
