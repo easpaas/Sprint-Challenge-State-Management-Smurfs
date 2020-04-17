@@ -25,28 +25,24 @@ function App() {
     setData([...data, smurf]);
   };
 
+  // remove smurf from array if remove button clicked
   const deleteSmurf = (id) => {
     axios.delete(`http://localhost:3333/smurfs/${id}`)
-    .then(response => {
-    setData([...data]);
-      console.log(response.data)
+    .then(() => {
+      setData([...data]);
     })
     .catch(error => {
       console.log(error.message)
     })
-    // console.log('inside delete smurf function')
   }
 
   return (
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
-      <div>Welcome to your state management version of Smurfs!</div>
-      <div>Start inside of your `src/index.js` file!</div>
-      <div>Have fun!</div>
-
+    
       <SmurfContext.Provider value={{ addSmurf }}>
         <div className="form">
-          <h3>Add a new smurf</h3>
+          <h3>add a new smurf</h3>
           <NewSmurf />
         </div>
       </SmurfContext.Provider>

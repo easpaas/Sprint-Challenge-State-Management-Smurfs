@@ -2,7 +2,61 @@
   text-align: center;
 }
 
+
 /* App styles */
+.form {
+ color: blue;
+  width: 30%;
+  margin: 2% auto;
+  padding-bottom: 4%;
+  border: 1px dashed blue;
+}
+.form h3 {
+  font-size: 2rem;
+  font-variant: small-caps;
+}
 
 
 /* Smurf styles */
+.smurf-contanier {
+  width: 25%;
+  margin: 4% 0;
+}
+#delete{ 
+  background-color:white;
+  color:blue;
+  padding: 1.5%;
+  font-size: 1rem;
+}
+
+
+/* SmurfList styles */
+.smurf-village {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color:blue;
+  color:white;
+}
+
+
+/* NewSmurf styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form input {
+  margin: 4% 2%;
+}
+#submit {
+  text-decoration: none;
+  padding: 1.5%;
+  background-color:blue;
+  color: white;
+  font-size: 1rem;
+}
+#submit:hover {
+  background-color: white;
+  color: blue;
+}

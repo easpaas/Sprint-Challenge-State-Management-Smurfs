@@ -70,7 +70,7 @@ const NewSmurf = () => {
           onChange={handleChanges}
         />
       </label>
-      <button>Submit</button>
+      <button id="submit">Submit</button>
     </form>
   );
 };
