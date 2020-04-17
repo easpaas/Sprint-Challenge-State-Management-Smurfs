@@ -23,10 +23,25 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+    Context API helps avoid the problem of prop drilling. Context API provides access to state at any component level. 
+	
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+    Actions are dispatched from the component and the redux store as instructions to the reducer on how to manipulate state before re-rendering. The Redux store acts as the single source of truth to avoid unnecessary/unexpected changes to state. This helps with JS immutability. 
+  
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+    Actions are dispatched from the component and the redux store as instructions to the reducer on how to manipulate state before re-rendering. The Redux store acts as the single source of truth to avoid unnecessary/unexpected changes to state. This helps with JS immutability. 
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+    Redux-thunk handles asynchronous changes in an application. Instead of returning an object, thunk uses an action creator to return a function instead.
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+    The ease and cost of time to use the Context API makes it my favorite state management system in React so far. Redux involves a lot of boilerplate that makes it difficult to understand at first, but it proves the most useful. So I would prefer to use Redux, but if I had it my way, Context API would be my choice.
+
 
 ## Project Set Up
 
