@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import "./App.css";
 import Smurf from "./Smurf";
+import NewSmurf from "./NewSmurf";
 
 
 
@@ -27,6 +28,10 @@ function App() {
       <div>Welcome to your state management version of Smurfs!</div>
       <div>Start inside of your `src/index.js` file!</div>
       <div>Have fun!</div>
+      <div className="form">
+        <h3>Add a new smurf</h3>
+        <NewSmurf />
+      </div>
       <div className="smurf">
         { 
           data.map(smurf => {
